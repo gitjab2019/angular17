@@ -1,0 +1,13 @@
+.footer{
+    display: grid;
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    text-align: center;
+    grid-template-rows: 1fr;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    background-color: lightgray;
+    padding-left: 20em;
+    padding-right: 20em;
+}

@@ -1,0 +1,89 @@
+<div class="container">
+  <h3>P.O.C: EMPLOYEE LIST</h3>
+  <div class="row">
+    <div class="col">
+      <app-emp
+        *ngFor="let emp of this.empService.empleados; let i = index"
+        [empleadoSon]="emp"
+        [indexSon]="i"
+        [selectedVector]="selected"
+        (newEvent)="updateLastSelected($event)"
+      ></app-emp>
+    </div>
+  </div>
+  <button type="submit" class="btn btn-danger" (click)="removeSelected()">
+    Remove
+  </button>
+
+  <button type="submit" class="btn btn-info" (click)="editSelected()">
+    Edit
+  </button>
+</div>
+<br />
+<div *ngIf="editionSelected">
+  <div class="container">
+    <form>
+      Name:
+      <input
+        type="text"
+        placeholder="Name"
+        [(ngModel)]="newNameToEdit"
+        [ngModelOptions]="{ standalone: true }"
+      />
+      Surname:<input
+        type="text"
+        placeholder="Surname"
+        [(ngModel)]="newSurnameToEdit"
+        [ngModelOptions]="{ standalone: true }"
+      />
+      Role:<input
+        type="text"
+        [(ngModel)]="newRoleToEdit"
+        [ngModelOptions]="{ standalone: true }"
+      />
+      Salary:
+      <input
+        type="number"
+        [(ngModel)]="newSalaryToEdit"
+        [ngModelOptions]="{ standalone: true }"
+      />
+      <button type="submit" class="btn btn-info" (click)="editPerson()">
+        Update
+      </button>
+    </form>
+  </div>
+</div>
+<br />
+<div>
+  <div class="container">
+    <form>
+      Name:
+      <input
+        type="text"
+        placeholder="Name"
+        [(ngModel)]="newName"
+        [ngModelOptions]="{ standalone: true }"
+      />
+      Surname:<input
+        type="text"
+        placeholder="Surname"
+        [(ngModel)]="newSurname"
+        [ngModelOptions]="{ standalone: true }"
+      />
+      Role:<input
+        type="text"
+        [(ngModel)]="newRole"
+        [ngModelOptions]="{ standalone: true }"
+      />
+      Salary:
+      <input
+        type="number"
+        [(ngModel)]="newSalary"
+        [ngModelOptions]="{ standalone: true }"
+      />
+      <button type="submit" class="btn btn-primary" (click)="addEmployee()">
+        Add
+      </button>
+    </form>
+  </div>
+</div>

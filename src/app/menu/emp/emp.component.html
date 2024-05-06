@@ -1,0 +1,13 @@
+<div class="listEmployee">
+  {{ indexSon + 1 }}
+  <a [routerLink]="['/edit', indexSon]"
+    >{{ empleadoSon.name }} {{ empleadoSon.surname }}</a
+  >
+  {{ empleadoSon.role }}
+  {{ empleadoSon.salary }}
+  <input
+    type="checkbox"
+    [(ngModel)]="selectedVector[indexSon]"
+    (change)="onCheckboxChange(indexSon)"
+  />
+</div>
