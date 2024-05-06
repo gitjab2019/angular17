@@ -11,7 +11,7 @@ import { EmployeehandlerService } from '../../core/services/employee/employeehan
   standalone: true,
   imports: [FormsModule],
 })
-export class EditempleadoComponent implements OnInit {
+export default class EditempleadoComponent implements OnInit {
   index!: number;
   aEmp!: Employee;
 
